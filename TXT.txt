@@ -1,0 +1,68 @@
+DOCUMENTATION:
+
+pip install requests beautifulsoup4
+Library to scrape info from web pages ( HTML AND XML files )
+
+User-Agent Header: Some websites may block requests that do not have a valid User-Agent header. 
+You can try adding a User-Agent header to the request to simulate a web browser:
+(FIXES ISSUE WITH GETTING URL)
+
+pip install pandas
+(READING CSV FILE)
+
+DATABASE
+mysql -u root -p 
+USE SUDO
+
+pip install mysql-connector-python
+(Python driver for communicating with mysql)
+
+------------------------------------------------------------
+GRANT ALL PRIVILEGES ON Stocks.* TO 'root'@'localhost';
+FLUSH PRIVILEGES; 
+// MY SQL ERROR DID NOT WORK
+
+CREATE USER 'neil'@'localhost' IDENTIFIED WITH auth_socket;  
+CREATE USER 'neil'@'localhost' IDENTIFIED BY 'neilhanda'; // WITH PASSWORD 
+GRANT ALL PRIVILEGES ON Stocks.* TO 'neil'@'localhost';
+FLUSH PRIVILEGES;
+LOGIN = mysql -u neil -p 
+
+SELCECT USER() to show current user 
+
+---------------------------------------------------------------
+
+LOGIC PART - MY ASSUMPTIONS 
+1) To populate the database we will ask for a date range from user and fill database
+2) If we keep Date_CODE as Primary key we won't have duplicate data. 
+3) To test this, we will do 2 overlapping date ranges and check total number of rows 
+---------------
+ISSUE = ERROR HANDLING- SHOULD NOT CRASH 
+SOLVED USING CHECKING IF EXISTS OR NOT
+))))))))
+BETTER - GET UNIQUE DATE AND CHECK BEFOREHAND so only need to do for 1 day and not entrie stock list
+))))))))
+----------------
+SOLUTION 1- ABOVE or we can add unique constraint- CHATGPT said- *******  PICK THIS *********
+ALTER TABLE stocks
+ADD CONSTRAINT unique_code_date UNIQUE (code, date);
+SOLUTION 2- check before adding
+
+CREATE TABLE stocks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    code VARCHAR(255),
+    name VARCHAR(255),
+    open FLOAT,
+    high FLOAT,
+    low FLOAT,
+    close FLOAT,
+    prevclose FLOAT,
+    date DATE
+);
+
+)))))))))))))))))))))))))))))))))))))))))))))))))))
+main.py: This file will contain the main Flask application setup, including the initialization of the Flask app and the definition of routes.
+data_processing.py: This file will contain the functions related to data processing, similar to the script you've already written for downloading and storing data.
+database.py: This file will handle interactions with the database. It will contain functions to connect to the database, execute queries, and perform other database-related operations.
+api.py: This file will define the RESTful API endpoints and handle the logic for each endpoint. It will interact with the data processing functions and the database functions.
+)))))))))))))))))))))))))))))))))))))))))))))))))))

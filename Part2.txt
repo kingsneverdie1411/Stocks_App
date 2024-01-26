@@ -1,0 +1,37 @@
+pip install flask
+
+)) how to call API's
+curl -X GET http://127.0.0.1:5000/top/10
+curl -X GET http://127.0.0.1:5000/findstocks/MRF
+
+CACHE))))))))- GET REQUEST )))))))))
+
+CREATE TABLE favourites (
+    code VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255)
+)
+
+curl -X POST -H "Content-Type: application/json" -d '{"code": "532790"}' http://127.0.0.1:5000/add_to_favourites/
+I AM PLANNING TO PUT A FORM TO ADD TO favouritesS
+Should redirecvto factourite page directly 
+
+))) DEBUG )))))
+The reason is that without a buffered cursor, the results are "lazily" loaded, meaning that "fetchone" actually only fetches one row
+ from the full result set of the query. When you will use the same cursor again, it will complain that you still have n-1 results 
+ (where n is the result set amount) waiting to be fetched. However, when you use a buffered cursor the connector fetches ALL rows
+  behind the scenes and you just take one from the connector so the mysql db won't complain.
+
+  @app.route('/remove_from_favourites/<string:code>', methods=['GET',"DELETE"])
+  // Browser pehle get request daalta hai fir delete hoga 
+
+  // @app.route('/add_to_favourites/', methods=['POST','GET'])
+  )))))))) GET NEEDED to render page ))))))))
+
+  ----------------------------------------------------------------------------------------------
+  TESTING DELETE SINCE FORM USED POST 
+  curl -X DELETE http://127.0.0.1:5000/remove_from_favourites/532790
+  ))) solved this also by using javascript
+
+  DELETE ERROR IN JAVASCRIPT = Had to refresh if made any changes, CTRL c also
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove from Favorites</title>
+</head>
+<body>
+    <h1>Remove Stock from Favorites</h1>
+    <form id="removeForm">
+        <label for="code">Stock Code:</label>
+        <input type="text" id="code" name="code" required>
+        <br>
+        <br>
+        <br>
+        <input type="button" value="Remove from Favorites" onclick="removeStock()">
+    </form>
+    
+    <script>
+        // function removeStock() {
+        //     var code = document.getElementById("code").value;
+        //     console.log(code)
+        //     // Send a DELETE request using fetch
+        //     fetch('/remove_from_favourites/' + code, {
+        //         method: 'DELETE',
+        //     })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         console.log(data);
+        //         // Handle success, e.g., show a success message
+        //     })
+        //     .catch(error => {
+        //         console.error('There was a problem with the fetch operation:', error);
+        //         // Handle errors, e.g., show an error message
+        //     });
+        // }
+        function removeStock() {
+            var code = document.getElementById("code").value;
+           
+            // Send a DELETE request using fetch
+            fetch('/remove_from_favourites/' + code, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                else{
+                    return response.json();
+                }
+
+            })
+            .then(data => {
+                console.log(data);
+                // Handle success, e.g., show a success message
+                window.location.href = '/get_favourites';
+            })
+            .catch(error => {
+                console.log("NeilHanda")
+                console.error('Theraaaaaa was a problem with the fetch operation:', error);
+                // Display the error message at the top of the page
+                // Display the error message as a pop-up alert
+                window.alert('Error while removing stock. Stock does not exist in favourites. Please check again :)');
+            });
+        }
+
+    </script>
+</body>
+</html>

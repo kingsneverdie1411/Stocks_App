@@ -1,0 +1,44 @@
+
+GET and POST are two different HTTP methods:
+
+Concept:
+
+GET: Requests data from a specified resource. It is a "safe" method since it doesn't modify anything on the server.
+POST: Submits data to be processed to a specified resource. It can include parameters in the request body, allowing for more data to be sent.
+Parameters: 
+
+GET: Parameters are included in the URL (e.g., as query parameters).
+POST: Parameters are included in the request body.
+Visibility:
+
+GET: Parameters are visible in the URL, and there is a limit to how much data can be sent (limited by the URL length).
+POST: Parameters are not visible in the URL, and more data can be sent since it is included in the request body.
+Caching:
+
+GET: Requests can be cached, making it suitable for data retrieval.
+POST: Requests are not cached, and it is suitable for operations that modify data.
+Idempotence:
+
+GET: Requests are idempotent (repeated requests have the same result).
+POST: Requests are not idempotent (repeated requests might have different results, especially if they involve creating new resources).
+Security:
+
+GET: Less secure for sensitive data as parameters are visible in the URL.
+POST: More secure for sensitive data as parameters are included in the request body.
+In the context of a RESTful API:
+
+GET requests are used to retrieve data.
+POST requests are used to create or update data.
+Implementation in Flask (Python):
+
+In Flask, you use the @app.route decorator to define routes for both GET and POST requests.
+For a GET request, you use the methods=["GET"] argument in @app.route.
+For a POST request, you use methods=["POST"].
+Calling:
+
+GET: Can be easily tested by entering the URL in a browser or using tools like curl or Postman.
+POST: Often requires a form or a tool like Postman to send data in the request body.
+Important Note:
+
+GET requests should not be used for sensitive data because parameters are visible in the URL and can be logged by browsers or servers. Use POST for operations that involve sensitive data.
+Now, if you have any specific questions or if you'd like to proceed with creating a POST API in Flask, let me know!

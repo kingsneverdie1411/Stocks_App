@@ -1,0 +1,26 @@
+
+First local before cloud:
+1) Better json visibility
+2) Show cache 
+
+First Script
+Two options (command line argument)
+Show 2nd because 1'st is API in app 
+
+Show database 
+
+API's 
+1) Top stocks = negative, positive, 5/10
+2) Find stocks by name = *SQL query to return only 1 date which is latest 
+3) History using code 
+4) Favourites Demo
+Add = Already in favourites, No stock found
+Delete= Does not exist
+
+EXTRA 
+1) Caching - Top stocks, Name 
+2) Update show using find stocks 
+
+MOVING TO CLOUD 
+1) CloudSQL 
+2) Google Cloud Buckets to store zip file 

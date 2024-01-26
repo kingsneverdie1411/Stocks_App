@@ -1,0 +1,59 @@
+CACHING 
+So basic idea is we will Cache the Get Requests 
+
+1) Top stocks 
+2) Popular Stocks by Name
+3) Popular Stocks for History  
+4) Favourite ???
+
+pip install Flask-Caching
+
+Cache implemented. NOW FOR STATS 
+pip install flask-cache-stats
+
+------------------------------------------------------------------------------------------------------------------
+
+DEPLOYING ON CLOUD 
+python3 -m venv venv
+(Virtual Environment)
+source venv/bin/activate
+ pip freeze > requirements.txt
+
+https://cloud.google.com/sdk/docs/install
+GOOGLE CLOUD DEPLOY FROM CLI 
+ https://www.youtube.com/watch?v=_OqxXjiASDI
+
+))))) Just followed the steps mentioned over here now 
+)))))) DATABASE ON CLOU D))))))))))
+
+instanceid=stocksapp
+password=neilhanda 
+
+SQL CONNECT - https://www.youtube.com/watch?v=xH93izCfKPw
+
+THIS IS OFFICIAL 
+https://www.youtube.com/watch?v=cBrn5IM4mA8
+
+))))) CONNECTION USING UNIX SOCKET and ENV VARIABLES
+
+The use of the unix_socket parameter in the connection configuration depends on whether you are connecting to a local MySQL 
+instance or a Cloud SQL instance on Google Cloud Platform.
+In the original code snippet you provided for connecting to a local MySQL instance, the unix_socket parameter wasn't 
+necessary because the connection was made over the network using the standard TCP/IP socket.
+
+When connecting to a Cloud SQL instance on Google Cloud Platform, especially when deploying a Flask app on the App Engine 
+or other Google Cloud services, using unix_socket is the recommended approach. The /cloudsql/ prefix in the host parameter
+ is specific to Google Cloud SQL and indicates that the connection should be made using a Unix domain socket rather than 
+ a TCP/IP socket.
+
+So, for Cloud SQL connections, it's a good practice to include the unix_socket parameter. If you're connecting to a local
+ MySQL instance or a MySQL instance hosted elsewhere that doesn't use Unix domain sockets, you can omit it
+
+ ------------------------------------------------------------------------------
+ PYTHON ERROR 
+ 1) removed tinkter etc
+ 2) removed paramter for now 
+ 3) OSError: [Errno 30] Read-only file system: 'Equity_Bhaavcopy.zip'
+
+ https://cloud.google.com/appengine/docs/standard/using-cloud-storage?tab=python
+ YE RAHA ISSUE 

@@ -1,0 +1,8 @@
+runtime: python38
+
+
+env_variables:
+  CLOUD_SQL_CONNECTION_NAME: 'model-factor-412306:asia-south1:stocksapp'
+  DB_USER: 'neil'
+  DB_PASSWORD: 'neilhanda'
+  DB_NAME: 'Stocks'
