@@ -1,0 +1,16 @@
+CREATE TABLE stocks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    code VARCHAR(255),
+    name VARCHAR(255),
+    open FLOAT,
+    high FLOAT,
+    low FLOAT,
+    close FLOAT,
+    prevclose FLOAT,
+    date DATE
+);
+
+CREATE TABLE favourites (
+    code VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255)
+)
