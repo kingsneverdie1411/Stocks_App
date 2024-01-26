@@ -25,16 +25,16 @@ def setup_api(app: Flask,database_name: str, table_name: str):
         #     database=database_name
         # )
         # Get the Cloud SQL instance connection name from the environment variable
-        cloud_sql_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
+        # cloud_sql_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
 
-        # Configure the database connection
-        connection = mysql.connector.connect(
-            user=os.environ.get('DB_USER'),
-            password=os.environ.get('DB_PASSWORD'),
-            host='/cloudsql/{}'.format(cloud_sql_connection_name),
-            database=os.environ.get('DB_NAME'),
-            unix_socket='/cloudsql/{}'.format(cloud_sql_connection_name)
-        )
+        # # Configure the database connection
+        # connection = mysql.connector.connect(
+        #     user=os.environ.get('DB_USER'),
+        #     password=os.environ.get('DB_PASSWORD'),
+        #     host='/cloudsql/{}'.format(cloud_sql_connection_name),
+        #     database=os.environ.get('DB_NAME'),
+        #     unix_socket='/cloudsql/{}'.format(cloud_sql_connection_name)
+        # )
         
 
         
